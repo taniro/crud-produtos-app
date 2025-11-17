@@ -56,7 +56,10 @@ export class ListaProdutos {
       complete: () => (this.produtos$ = this.produtosService.list()),
     });
   }
-  onEdit(id: number) {
-    this.router.navigate([id.toString() + '/edit'], { relativeTo: this.activatedRoute });
+  onEdit(produto_id: number) {
+    this.router.navigate(['edit'], {
+      relativeTo: this.activatedRoute,
+      queryParams: { id: produto_id },
+    });
   }
 }
